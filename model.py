@@ -2,7 +2,7 @@ import torch.nn as nn
 
 class Net(nn.Module):
     """
-    Convolutional Neural Network for PPO
+    Convolutional Neural Network for Proximal Policy Optimization
     """
 
     def __init__(self, img_stack):
@@ -42,4 +42,3 @@ class Net(nn.Module):
         beta = self.beta_head(x) + 1
 
         return (alpha, beta), v
-

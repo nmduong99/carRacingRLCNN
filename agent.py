@@ -9,32 +9,32 @@ from model import Net
 
 img_stack=4
 
-transition = np.dtype([('s', np.float64, (img_stack, 96, 96)), 
+transition = np.dtype([('s', np.float64, (img_stack, 96, 96)),
                        ('a', np.float64, (3,)), ('a_logp', np.float64),
                        ('r', np.float64), ('s_', np.float64, (img_stack, 96, 96))])
 
 GAMMA=0.99
 EPOCH= 8 # beter than 10
 MAX_SIZE = 2000 ## CUDA out of mem for max_size=10000
-BATCH=128 
+BATCH=128
 EPS=0.1
-LEARNING_RATE = 0.001 # bettr than 0.005 or 0.002 
+LEARNING_RATE = 0.001 # bettr than 0.005 or 0.002
 
 class Agent():
-    """ Agent for training """
-    
+    """ Training Agent """
+
     def __init__(self, device):
         self.training_step = 0
         self.net = Net(img_stack).double().to(device)
         self.buffer = np.empty(MAX_SIZE, dtype=transition)
         self.counter = 0
         self.device = device
-        
+
         self.optimizer = optim.Adam(self.net.parameters(), lr=LEARNING_RATE)  ## lr=1e-3
 
     def select_action(self, state):
         state = torch.from_numpy(state).double().to(self.device).unsqueeze(0)
-        
+
         with torch.no_grad():
             alpha, beta = self.net(state)[0]
         dist = Beta(alpha, beta)
@@ -79,7 +79,7 @@ class Agent():
                 ratio = torch.exp(a_logp - old_a_logp[index])
 
                 surr1 = ratio * adv[index]
-                
+
                 # clipped function
                 surr2 = torch.clamp(ratio, 1.0 - EPS, 1.0 + EPS) * adv[index]
                 action_loss = -torch.min(surr1, surr2).mean()
