@@ -113,31 +113,26 @@ def play(env, agent, n_episodes):
 
 # 3.Load and play 
 
-load(agent, 'dir_chk', 'model_weights_0.pth')
-play(env, agent, n_episodes=5)
+#load(agent, 'dir_chk', 'model_weights_0.pth')
+#play(env, agent, n_episodes=5)
 
+#load(agent, 'dir_chk', 'model_weights_400.pth')
+#play(env, agent, n_episodes=5)
 
+#load(agent, 'dir_chk', 'model_weights_600.pth')
+#play(env, agent, n_episodes=5)
 
-load(agent, 'dir_chk', 'model_weights_400.pth')
-play(env, agent, n_episodes=5)
+#load(agent, 'dir_chk', 'model_weights_800.pth')
+#play(env, agent, n_episodes=5)
 
+#load(agent, 'dir_chk', 'model_weights_830.pth')
+#play(env, agent, n_episodes=5)
 
-
-load(agent, 'dir_chk', 'model_weights_600.pth')
-play(env, agent, n_episodes=5)
-
-
-load(agent, 'dir_chk', 'model_weights_800.pth')
-play(env, agent, n_episodes=5)
-
-load(agent, 'dir_chk', 'model_weights_830.pth')
-play(env, agent, n_episodes=5)
-
-
+#  play game with record in range 870 score
 load(agent, 'dir_chk', 'model_weights_870.pth')
 play(env, agent, n_episodes=5)
 
-
+# play game with record in range 900 score 
 load(agent, 'dir_chk', 'model_weights_900.pth')
 play(env, agent, n_episodes=5)
 
