@@ -56,11 +56,12 @@ The Beta distribution (torch.distributions.beta) is used to fetch the action sam
 - cmd "python train.py"
 - Weights (điểm) train được sẽ được lưu ở file _model_weights_score.pth 
 - Kết quả được thể hiện trong file TrainModel.pdf
-- ĐƯợc train ntn ???
+- Nhóm đã train trong thời gian gần 8 tiếng và ghi lại các giá trị total reward  của  mỗi espisode . Tổng  số espisode đã  train là 2962 . Kết quả được thể hiện ở file TrainAgent.pdf
 
 * Run watch agent 
 - cmd "python test.py"
-- kết quả dc thể hiện trên console/ WatchAgent.ipynb
+- chạy 10 màn dựa vào record trong khoảng 870-900 score 
+
 
 
 
