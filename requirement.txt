@@ -1,0 +1,6 @@
+numpy
+gym
+torch torchvision
+matplotlib
+Box2D
+
