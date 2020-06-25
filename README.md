@@ -1,7 +1,7 @@
 * Install module requirement 
 
-- $ pip install -r requirements.txt
-- Nvidia 1050 / GPU
+   $ pip install -r requirements.txt
+   Nvidia 1050 / GPU
 
 * Run train agent   
 - cmd "python train.py"
